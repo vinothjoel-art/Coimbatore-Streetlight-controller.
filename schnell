@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>Dashboard Login</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+
+  height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  background-image:
+  linear-gradient(rgba(0,0,0,0.2),
+  rgba(0,0,0,0.2)),
+  url('https://lh3.googleusercontent.com/d/1H-1JUpNulGQQqTB6NkvU0Hj2fu9ccqVp');
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.login-box{
+
+  width:380px;
+
+  padding:40px;
+
+  background:rgba(0,0,0,0.55);
+
+  border-radius:20px;
+
+  backdrop-filter:blur(8px);
+
+  box-shadow:0 0 30px rgba(255,255,255,0.15);
+
+  color:white;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+input{
+
+  width:100%;
+
+  padding:14px;
+
+  margin-top:15px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:rgba(255,255,255,0.12);
+
+  color:white;
+
+  font-size:16px;
+}
+
+input::placeholder{
+  color:#ddd;
+}
+
+button{
+
+  width:100%;
+
+  padding:14px;
+
+  margin-top:20px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:#0d6efd;
+
+  color:white;
+
+  font-size:18px;
+
+  cursor:pointer;
+}
+
+button:hover{
+  background:#0056d6;
+}
+
+#msg{
+  text-align:center;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<h1>Login</h1>
+
+<input type="text"
+       id="username"
+       placeholder="Username">
+
+<input type="password"
+       id="password"
+       placeholder="Password">
+
+<button onclick="login()">
+Login
+</button>
+
+<div id="msg"></div>
+
+</div>
+
+<script>
+
+function login(){
+
+  var user =
+  document.getElementById("username").value;
+
+  var pass =
+  document.getElementById("password").value;
+
+  if(user=="admin" && pass=="12345"){
+
+    document.getElementById("msg").style.color =
+    "#00ff99";
+
+    document.getElementById("msg").innerHTML =
+    "Login Successful";
+
+    window.location.href =
+    "https://datastudio.google.com/reporting/a255cfb5-29a0-4920-a6e0-6ec05159aa08";
+
+  } else {
+
+    document.getElementById("msg").style.color =
+    "red";
+
+    document.getElementById("msg").innerHTML =
+    "Invalid Username or Password";
+  }
+}
+
+</script>
+
+</body>
+</html>
